@@ -39,7 +39,7 @@ Pod::Spec.new do |spec|
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  spec.source_files  = "Dates"
+  spec.source_files  = 'Dates/*.swift'
 
   spec.swift_version = "5.0"
 
