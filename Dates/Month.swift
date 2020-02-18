@@ -203,18 +203,17 @@ public extension Date {
     
     ///Returns the number of specified days in the current month for the given date (self).
     ///
-    /// - Warning: This function does not follow the Gregorian Calendar. Within this function Sunday is represented by 7.
     ///
     ///Usage:
     ///
-    ///     print(Date().numberOfGivenDayInMonth(selectedDay: 1)) // 4
+    ///     print(Date().numberOfGivenDayInMonth(selectedDay: .Wednesday)) // 4
     ///
     
     /// - parameter selectedDay: The day which number in the current month for the given date is calculated.
     ///
     /// - returns: An Int representing the number of specified days in the current month for the given date (self).
     
-    func numberOfGivenDayInMonth(selectedDay: Int) -> Int {
+    func numberOfGivenDayInMonth(selectedDay: SelectedDay) -> Int {
         var calendar = Calendar.iso8601
         calendar.timeZone = TimeZone(abbreviation: "GMT")!
         let year = calendar.component(.year, from: self)
@@ -224,11 +223,23 @@ public extension Date {
         dateComponents.year = year
         dateComponents.month = month
         
+        
         var dayToCheck = 0
-        if selectedDay < 7 {
-           dayToCheck = selectedDay + 1
-        }
-        if selectedDay == 7 {
+        
+        switch selectedDay {
+        case .Monday:
+           dayToCheck = 2
+        case .Tuesday:
+            dayToCheck = 3
+        case .Wednesday:
+            dayToCheck = 4
+        case .Thursday:
+            dayToCheck = 5
+        case .Friday:
+            dayToCheck = 6
+        case .Saturday:
+            dayToCheck = 7
+        case .Sunday:
             dayToCheck = 1
         }
         
@@ -246,6 +257,7 @@ public extension Date {
         }
         return numOfGivenDay
     }
+
     
     ///Returns the number of working days in the current month for the given date (self).
     ///

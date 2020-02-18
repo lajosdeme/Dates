@@ -33,25 +33,6 @@ public extension Date {
     ///
     /// Usage:
     ///
-    ///     print(Date().format(dateStyle: .full, timeStyle: .medium)) // Wednesday, January 22, 2020 at 8:05:32 PM
-    ///
-    /// - parameter dateStyle: The DateFormatter.Style attribute to be applied to the dateStyle.
-    /// - parameter timeStyle: The DateFormatter.Style attribute to be applied to the timeStyle.
-    ///
-    /// - returns: A String object representing the given date (self) in a format determined by the inputs.
-    
-    func format(dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = dateStyle
-        dateFormatter.timeStyle = timeStyle
-        
-        return dateFormatter.string(from: self)
-    }
-    
-    ///Returns a String representing the given date (self) in a format determined by the inputs.
-    ///
-    /// Usage:
-    ///
     ///     print(Date().format(dateStyle: .medium, timeStyle: .full, locale: Locale.current, timeZone: TimeZone.current)) // Jan 22, 2020 at 8:05:32 PM Central European Standard Time
     ///
     /// - parameter dateStyle: The DateFormatter.Style attribute to be applied to the dateStyle.
@@ -68,21 +49,6 @@ public extension Date {
         dateFormatter.locale = locale
         dateFormatter.timeZone = timeZone
         
-        return dateFormatter.string(from: self)
-    }
-    
-    ///Returns a String representing the given date (self) in a format determined by the inputs.
-    ///
-    /// Usage:
-    ///
-    ///     print(Date().format(dateFormat: "E, d MMM yyyy HH:mm:ss Z")) // Wed, 22 Jan 2020 20:05:32 +0100
-    ///
-    /// - parameter dateFormat: The string to be set as the date format of the date formatter.
-    ///
-    /// - returns: A String object representing the given date (self) in a format determined by the inputs.
-    func format(dateFormat: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateFormat
         return dateFormatter.string(from: self)
     }
     

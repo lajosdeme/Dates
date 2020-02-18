@@ -66,7 +66,7 @@ date.secondsInMonth // 2678399
 date.weeksInGivenMonth(month: 1) // 5
 date.daysInGivenMonth(month: 1) // 31
 
-numberOfGivenDayInMonth(selectedDay: 1) // 4
+numberOfGivenDayInMonth(selectedDay: .Wednesday) // 4
 
 date.workdaysInMonth() // 23
 date.weekendDaysInMonth() // 8
@@ -93,12 +93,12 @@ date.nextYear // 2021
 date.year(byAdding: 3) // 2023
 
 date.weeksInYear // 53
-date.daysInYear // 366
+date.daysInYear // 365
 date.hoursInYear // 8783
 date.minutesInYear // 527039
 date.secondsInYear // 31622399
 
-date.numberOfGivenDayInYear(selectedDay: 3) // 53
+date.numberOfGivenDayInYear(selectedDay: .Friday) // 53
 
 date.workdaysInYear() // 262
 date.weekendDaysInYear() // 104
@@ -128,11 +128,7 @@ Format dates however you want:
 
 let date = Date()
 
-date.format(dateStyle: .full, timeStyle: .medium) // Wednesday, January 22, 2020 at 8:05:32 PM
-
 date.format(dateStyle: .medium, timeStyle: .full, locale: Locale.current, timeZone: TimeZone.current) // Jan 22, 2020 at 8:05:32 PM Central European Standard Time
-
-date.format(dateFormat: "E, d MMM yyyy HH:mm:ss Z") // Wed, 22 Jan 2020 20:05:32 +0100
 
 date.format(dateFormat: "E, d MMM yyyy HH:mm:ss Z", locale: Locale.current, timeZone: TimeZone.current) // Wed, 22 Jan 2020 20:05:32 +0100
 
@@ -243,4 +239,5 @@ If you have comments, complaints or ideas for improvements, feel free to open an
  - [Github](https://github.com/lajosdeme)
  
 Dates is available under the MIT license. See the LICENSE file for more info.
+ 
  
