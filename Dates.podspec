@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   spec.name         = "Dates"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "Dates extensions and functions in Swift."
 
   spec.description  = <<-DESC
